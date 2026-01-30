@@ -13,6 +13,10 @@ The goal of this project is to demonstrate:
 
 ## 🧠 Architecture Overview
 
+
+<img width="583" height="761" alt="image" src="https://github.com/user-attachments/assets/dbfa886e-7817-4c61-a114-a605f1e8fee2" />
+
+
 There are **two services**:
 
 1. **Mock ATS (Flask)**
@@ -24,6 +28,7 @@ There are **two services**:
    - Exposes unified APIs required by the assignment
    - Internally calls the ATS APIs over HTTP
    - Can be adapted to real ATS providers by changing environment variables
+
 
 
 ---
