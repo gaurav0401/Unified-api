@@ -39,6 +39,7 @@ There are **two services**:
 ### Start the ATS
 
 ```bash
+pip install -r requirements.txt
 cd mock-ats
 python app.py
 ``` 
