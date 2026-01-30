@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Applications</h2>
+
+<ul>
+{% for app in applications %}
+  <li>
+    Application {{ app.id }} —
+    Job {{ app.job_id }} —
+    Candidate {{ app.candidate_id }} —
+    Status: {{ app.status }}
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

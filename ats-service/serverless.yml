@@ -1,0 +1,30 @@
+service: ats-service
+
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  getJobs:
+    handler: src/handler.get_jobs
+    events:
+      - http:
+          path: jobs
+          method: get
+
+  createCandidate:
+    handler: src/handler.create_candidate_handler
+    events:
+      - http:
+          path: candidates
+          method: post
+
+  getApplications:
+    handler: src/handler.get_applications
+    events:
+      - http:
+          path: applications
+          method: get
+
+plugins:
+  - serverless-offline

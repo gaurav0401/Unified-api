@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Jobs</h2>
+
+<ul>
+{% for job in jobs %}
+  <li>
+    <strong>{{ job.title }}</strong> — {{ job.location }} ({{ job.status }})
+
+    <form method="post" action="/ui/apply" style="margin-top: 10px;">
+      <input type="hidden" name="job_id" value="{{ job.id }}">
+
+      <select name="candidate_id" required>
+        <option value="">Select Candidate</option>
+        {% for c in candidates %}
+          <option value="{{ c.id }}">{{ c.name }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Apply</button>
+    </form>
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

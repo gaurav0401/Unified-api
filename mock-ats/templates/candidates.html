@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Candidate</h2>
+<form method="post" action="/ui/candidates/create">
+  <input name="name" placeholder="Name" required><br><br>
+  <input name="email" placeholder="Email" required><br><br>
+  <input name="phone" placeholder="Phone"><br><br>
+  <input name="resume_url" placeholder="Resume URL"><br><br>
+  <button>Create</button>
+</form>
+
+<h2>Existing Candidates</h2>
+<ul>
+{% for c in candidates %}
+  <li>{{ c.name }} — {{ c.email }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
